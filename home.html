@@ -28,10 +28,17 @@
         font-optical-sizing: auto;
         font-style: normal;
       }
+      .option-btn {
+        transition: all 0.3s ease;
+      }
+      .option-btn:hover {
+        background-color: #08080808;
+        font-weight: 500;
+      }
     </style>
   </head>
   <body
-    class="h-dvh w-dvw max-w-[576px] mx-auto bg-gradient-to-b from-[#F4F5F7] to-[#00aaff15] outfit"
+    class="h-dvh w-dvw max-w-[450px] mx-auto bg-gradient-to-b from-[#F4F5F7] to-[#00aaff15] outfit"
   >
     <div class="bg-white">
       <header
@@ -43,59 +50,94 @@
           </div>
           <div>
             <h3 class="font-bold">$ <span id="balance">45000</span></h3>
-            <p class="text-sm text-[#08080880]">Available Balance</p>
+            <p class="text-[12px] text-[#08080880]">Available Balance</p>
           </div>
         </div>
         <button
           class="flex items-center py-2 px-4 text-[#08080880] border border-[#0808081a] rounded-xl m-5"
         >
           <i class="fa-solid fa-arrow-right-from-bracket mr-2.5"></i
-          ><span class="text-sm">Log Out</span>
+          ><span class="text-[12px]">Log Out</span>
         </button>
       </header>
 
       <section class="p-6">
         <h1 class="text-2xl font-extrabold my-3">🔥 Welcome to Payooo!</h1>
-        <p class="text-sm text-[#08080880] max-w-sm">
+        <p class="text-[12px] text-[#08080880] max-w-sm">
           Enjoy easy and convenient financial services with us. Cashout charge
           is low and NO hidden Charge
         </p>
       </section>
     </div>
-    <div class="px-6 pb-6 flex justify-evenly flex-wrap gap-4 bg-white rounded-b-3xl">
-      <div class="px-6 py-5 border border-[#0808081a] rounded-xl w-fit">
+
+    <!-- option card section -->
+    <div class="px-5 pb-6 grid grid-cols-3 gap-4 bg-white rounded-b-3xl">
+      <div class="option-btn py-4 border border-[#0808081a] rounded-xl">
         <img class="mx-auto transform" src="./assets/wallet1.png" alt="" />
-        <p class="text-sm text-[#080808b3] text-center mt-2">Add Money</p>
-      </div>
-      
-      <div class="px-6 py-5 border border-[#0808081a] rounded-xl w-fit">
-        <img class="mx-auto transform" src="./assets/wallet1.png" alt="" />
-        <p class="text-sm text-[#080808b3] text-center mt-2">Add Money</p>
-      </div>
-      
-      <div class="px-6 py-5 border border-[#0808081a] rounded-xl w-fit">
-        <img class="mx-auto transform" src="./assets/wallet1.png" alt="" />
-        <p class="text-sm text-[#080808b3] text-center mt-2">Add Money</p>
+        <p class="text-[12px] text-[#080808b3] text-center mt-2">Add Money</p>
       </div>
 
-      <div class="px-6 py-5 border border-[#0808081a] rounded-xl w-fit">
-        <img class="mx-auto transform" src="./assets/wallet1.png" alt="" />
-        <p class="text-sm text-[#080808b3] text-center mt-2">Add Money</p>
+      <div class="option-btn py-4 border border-[#0808081a] rounded-xl">
+        <img class="mx-auto transform" src="./assets/send1.png" alt="" />
+        <p class="text-[12px] text-[#080808b3] text-center mt-2">Cashout</p>
       </div>
 
-      <div class="px-6 py-5 border border-[#0808081a] rounded-xl w-fit">
-        <img class="mx-auto transform" src="./assets/wallet1.png" alt="" />
-        <p class="text-sm text-[#080808b3] text-center mt-2">Add Money</p>
+      <div class="option-btn py-4 border border-[#0808081a] rounded-xl">
+        <img class="mx-auto transform" src="./assets/money1.png" alt="" />
+        <p class="text-[12px] text-[#080808b3] text-center mt-2">
+          Transfer Money
+        </p>
       </div>
 
-      <div class="px-6 py-5 border border-[#0808081a] rounded-xl w-fit">
-        <img class="mx-auto transform" src="./assets/wallet1.png" alt="" />
-        <p class="text-sm text-[#080808b3] text-center mt-2">Add Money</p>
+      <div class="option-btn py-4 border border-[#0808081a] rounded-xl">
+        <img class="mx-auto transform" src="./assets/bonus1.png" alt="" />
+        <p class="text-[12px] text-[#080808b3] text-center mt-2">Get Bonus</p>
+      </div>
+
+      <div class="option-btn py-4 border border-[#0808081a] rounded-xl">
+        <img class="mx-auto transform" src="./assets/purse1.png" alt="" />
+        <p class="text-[12px] text-[#080808b3] text-center mt-2">Pay Bill</p>
+      </div>
+
+      <div class="option-btn py-4 border border-[#0808081a] rounded-xl">
+        <img class="mx-auto transform" src="./assets/transaction1.png" alt="" />
+        <p class="text-[12px] text-[#080808b3] text-center mt-2">
+          Transactions
+        </p>
       </div>
     </div>
     <!-- fixed section end here -->
 
     <!-- latest transaction section -->
-    
+    <div class="home dynamc-section mt-6 mx-5">
+      <header class="flex justify-between items-center mb-4">
+        <h4 class="font-semibold">Latest Payment</h4>
+        <p class="text-[12px] text-[#08080880]">View All</p>
+      </header>
+      <div class="history">
+        
+        <div class="flex justify-between items-center bg-white rounded-md p-1">
+          <div class="flex gap-2 items-center">
+            <div class="bg-[#F4F5F7] p-2 rounded-full">
+              <img src="./assets/wallet1.png" alt="" />
+            </div>
+            <div>
+              <h3 class="text-sm font-semibold">Add Money</h3>
+              <p class="text-[10px] text-[#08080880]">Today 12:00 PM</p>
+            </div>
+          </div>
+          <h3 class="text-sm font-semibold mx-5"><span>1000</span> $</h3>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- add money section -->
+    <div class="home dynamc-section mt-6 hidden">
+      <header class="flex justify-between items-center mb-4">
+        <h4 class="font-semibold">Add Money</h4>
+      </header>
+      <div></div>
+    </div>
   </body>
 </html>
