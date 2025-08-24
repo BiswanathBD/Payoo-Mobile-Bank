@@ -49,7 +49,16 @@
             <img src="./assets/payoo.png" alt="" />
           </div>
           <div>
-            <h3 class="font-bold">$ <span id="balance">45000</span></h3>
+            <h3 id="show-balnce" class="font-bold flex items-center text-sm">
+              <img class="w-6 mb-0.5 mr-0.5" src="./assets/balance.webp" alt="" />
+              <div id="balance" class="hidden">
+                <span id="amount" class="text-[#578a00] ml-1">45000</span
+                ><span class="font-bold text-sm">$</span>
+              </div>
+              <span id="hide" class="text-[10px] font-bold  bg-[#e2f7bf] px-2 rounded-full"
+                >Tap to Show</span
+              >
+            </h3>
             <p class="text-[12px] text-[#08080880]">Available Balance</p>
           </div>
         </div>
@@ -109,13 +118,13 @@
     <!-- fixed section end here -->
 
     <!-- latest transaction section -->
-    <div class="home dynamc-section mt-6 mx-5">
+    <div class="dynamc-section mt-6 mx-5">
       <header class="flex justify-between items-center mb-4">
         <h4 class="font-semibold">Latest Payment</h4>
         <p class="text-[12px] text-[#08080880]">View All</p>
       </header>
-      <div class="history">
-        
+
+      <div class="history-parent">
         <div class="flex justify-between items-center bg-white rounded-md p-1">
           <div class="flex gap-2 items-center">
             <div class="bg-[#F4F5F7] p-2 rounded-full">
@@ -129,7 +138,6 @@
           <h3 class="text-sm font-semibold mx-5"><span>1000</span> $</h3>
         </div>
       </div>
-
     </div>
 
     <!-- add money section -->
@@ -139,5 +147,7 @@
       </header>
       <div></div>
     </div>
+
+    <script src="./home.js"></script>
   </body>
 </html>
