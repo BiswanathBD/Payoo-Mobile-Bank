@@ -14,6 +14,8 @@ loginBtn.addEventListener("click", function (e) {
   if (mobileNumber === validMobileNumber && pin === validPin) {
     window.location.href = "./home.html";
   } else {
+    getByID("mobile").value = "";
+    getByID("pin").value = "";
     alert("Mobile Number or Pin incorrect");
   }
 });
