@@ -38,3 +38,25 @@ loginBtn.addEventListener("click", function (e) {
     window.location.href = "./home.html";
   }
 });
+
+const numValue = getByID("mobile");
+const flag = getByID("icon-flag");
+
+const pinValue = getByID(pin);
+const lock = getByID("icon-lock");
+
+numValue.addEventListener("blur", () => {
+  if (numValue.value.length > 0) {
+    flag.classList.replace("opacity-50", "opacity-100");
+  } else {
+    flag.classList.replace("opacity-100", "opacity-50");
+  }
+});
+
+pinValue.addEventListener("blur", () => {
+  if (pinValue.value.length > 0) {
+    lock.classList.replace("opacity-50", "opacity-100");
+  } else {
+    lock.classList.replace("opacity-100", "opacity-50");
+  }
+});
