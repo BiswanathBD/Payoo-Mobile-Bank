@@ -56,7 +56,8 @@
                 alt=""
               />
               <div id="balance" class="hidden">
-                <span id="amount" class="text-[#578a00] ml-1">45000</span
+                <span id="current-balance" class="text-[#578a00] ml-1"
+                  >45000</span
                 ><span class="font-bold text-sm">$</span>
               </div>
               <span
@@ -143,7 +144,7 @@
     <!-- fixed section end here -->
 
     <!-- latest transaction section -->
-    <div class="dynamic-section mt-6 mx-5">
+    <div id="latest-transaction" class="dynamic-section mt-6 mx-5 hidden">
       <header class="flex justify-between items-center mb-4">
         <h4 class="font-semibold">Latest Payment</h4>
         <p class="text-[12px] text-[#08080880]">View All</p>
@@ -166,10 +167,7 @@
     </div>
 
     <!-- add money section -->
-    <div
-      id="add-money-section"
-      class="dynamic-section mt-6 mx-5 hidden"
-    >
+    <div id="add-money-section" class="dynamic-section mt-6 mx-5">
       <header class="flex justify-between items-center mb-4">
         <h4 class="font-semibold">Add Money</h4>
       </header>
@@ -181,12 +179,12 @@
           id="bank"
         >
           <option value="" disabled selected hidden>Select Bank</option>
-          <option value="">Dutch Bangla Bank</option>
-          <option value="">City Bank</option>
-          <option value="">Brac Bank</option>
-          <option value="">Islami Bank Bangladesh</option>
-          <option value="">Dhaka Bank</option>
-          <option value="">Other Bank</option>
+          <option value="0">Dutch Bangla Bank</option>
+          <option value="1">City Bank</option>
+          <option value="2">Brac Bank</option>
+          <option value="3">Islami Bank Bangladesh</option>
+          <option value="4">Dhaka Bank</option>
+          <option value="5">Other Bank</option>
         </select>
 
         <label class="mt-2" for="bank-number">Bank Account Number</label>
@@ -203,7 +201,7 @@
           class="bg-[#F4F5F7] font-light text-sm px-5 py-3 rounded-full outline-none focus:ring-1 focus:ring-sky-300 text-[#08080880]"
           type="text"
           name=""
-          id="amount"
+          id="add-amount"
           placeholder="Add Amount to withdraw"
         />
 
@@ -226,10 +224,7 @@
     </div>
 
     <!-- cash out section -->
-    <div
-      id="cash-out-section"
-      class="dynamic-section mt-6 mx-5 hidden"
-    >
+    <div id="cash-out-section" class="dynamic-section mt-6 mx-5 hidden">
       <header class="flex justify-between items-center mb-4">
         <h4 class="font-semibold">Cash Out</h4>
       </header>
@@ -271,10 +266,7 @@
     </div>
 
     <!-- Transfer section -->
-    <div
-      id="transfer-section"
-      class="dynamic-section mt-6 mx-5 hidden"
-    >
+    <div id="transfer-section" class="dynamic-section mt-6 mx-5 hidden">
       <header class="flex justify-between items-center mb-4">
         <h4 class="font-semibold">Transfer Money</h4>
       </header>
