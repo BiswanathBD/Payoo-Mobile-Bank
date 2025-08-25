@@ -45,9 +45,7 @@
         class="flex justify-between items-center border-b border-[#0808081a]"
       >
         <div class="flex items-center gap-1">
-          <div class="w-14 h-14 p-3 m-2.5 bg-[#F4F5F7] rounded-full">
-            <img src="./assets/payoo.png" alt="" />
-          </div>
+            <img class="w-14 h-14 p-1 mr-1 ml-3 rounded-full" src="./assets/Biswanath.jpg" alt="" />
           <div>
             <h3 id="show-balance" class="font-bold flex items-center text-sm">
               <img
@@ -144,30 +142,37 @@
     <!-- fixed section end here -->
 
     <!-- latest transaction section -->
-    <div id="latest-transaction" class="dynamic-section mt-6 mx-5 hidden">
+    <div id="latest-transaction" class="dynamic-section mt-6 mx-5">
       <header class="flex justify-between items-center mb-4">
         <h4 class="font-semibold">Latest Payment</h4>
         <p class="text-[12px] text-[#08080880]">View All</p>
       </header>
 
-      <div class="history-parent">
-        <div class="flex justify-between items-center bg-white rounded-md p-1">
+      <div id="history-parent" class="flex flex-col-reverse gap-2">
+        <div
+          id="history-card"
+          class="flex justify-between items-center bg-white rounded-md p-1"
+        >
           <div class="flex gap-2 items-center">
             <div class="bg-[#F4F5F7] p-2 rounded-full">
-              <img src="./assets/wallet1.png" alt="" />
+              <img id="trns-icon" src="./assets/wallet1.png" alt="" />
             </div>
             <div>
-              <h3 class="text-sm font-semibold">Add Money</h3>
-              <p class="text-[10px] text-[#08080880]">Today 12:00 PM</p>
+              <h3 id="trns-type" class="text-sm font-semibold">Add Money</h3>
+              <p id="trns-time" class="text-[10px] text-[#08080880]">
+                1/1/2025, 10:30:54 AM
+              </p>
             </div>
           </div>
-          <h3 class="text-sm font-semibold mx-5"><span>1000</span> $</h3>
+          <h3 class="text-sm font-semibold mx-5">
+            <span id="trns-amount">45000</span> $
+          </h3>
         </div>
       </div>
     </div>
 
     <!-- add money section -->
-    <div id="add-money-section" class="dynamic-section mt-6 mx-5">
+    <div id="add-money-section" class="dynamic-section mt-6 mx-5 hidden">
       <header class="flex justify-between items-center mb-4">
         <h4 class="font-semibold">Add Money</h4>
       </header>
@@ -306,6 +311,31 @@
         </button>
       </form>
     </div>
+
+    <!-- get bonus section -->
+    <div id="bonus-section" class="dynamic-section mt-6 mx-5 hidden">
+      <header class="flex justify-between items-center mb-4">
+        <h4 class="font-semibold">Get Bonus</h4>
+      </header>
+      <form class="flex flex-col bg-white p-4 gap-1 rounded-3xl">
+        <label class="mt-2" for="coupon">Enter Bonus Coupon</label>
+        <input
+          class="bg-[#F4F5F7] font-light text-sm px-5 py-3 rounded-full outline-none focus:ring-1 focus:ring-sky-300 text-[#08080880]"
+          type="text"
+          name=""
+          id="bonus-coupon"
+          placeholder="Enter Bonus Coupon"
+        />
+
+        <button
+          id="transfer-btn"
+          class="bg-[#0874F2] text-white mt-10 px-4 py-3 rounded-full font-semibold"
+        >
+          Send Now
+        </button>
+      </form>
+    </div>
+
     <script src="./home.js"></script>
   </body>
 </html>

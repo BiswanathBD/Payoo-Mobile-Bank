@@ -51,6 +51,43 @@ transferCard.addEventListener("click", function () {
   hiddenToggle("transfer-section");
 });
 
+// get bonus card
+const bonusCard = getById("bonus-card");
+bonusCard.addEventListener("click", function () {
+  hiddenToggle("bonus-section");
+});
+
+// transaction history feature
+const latestTensParent = getById("history-parent");
+const latestTens = getById("history-card");
+function newLatestTrs(type, time, amount) {
+  const latestTensClone = latestTens.cloneNode(true);
+  latestTensClone.removeAttribute("id");
+
+  latestTensClone.querySelector("#trns-type").innerText = type;
+  latestTensClone.querySelector("#trns-time").innerText = time;
+  latestTensClone.querySelector("#trns-amount").innerText = amount;
+
+  const trnsIcon = latestTensClone.querySelector("#trns-icon");
+  if (type == "Add Money") {
+    trnsIcon.src = "./assets/wallet1.png";
+  }
+
+  if (type == "Add Money") {
+    trnsIcon.src = "./assets/wallet1.png";
+  } else if (type == "Cash Out") {
+    trnsIcon.src = "./assets/send1.png";
+  } else if (type == "Transfer Money") {
+    trnsIcon.src = "./assets/money1.png";
+  } else if (type == "Get Bonus") {
+    trnsIcon.src = "./assets/bonus1.png";
+  } else if (type == "Pay Bill") {
+    trnsIcon.src = "./assets/purse1.png";
+  }
+
+  latestTensParent.appendChild(latestTensClone);
+}
+
 // add money feature
 const addBtn = getById("add-money");
 
@@ -73,7 +110,10 @@ addBtn.addEventListener("click", function (e) {
     currentBalance += parseInt(addAmount);
     getById("current-balance").innerText = currentBalance;
     showHide();
-    alert("Add Money Successful");
+    // alert("Add Money Successful");
     hiddenToggle("latest-transaction");
+    const time = new Date().toLocaleString();
+
+    newLatestTrs("Add Money", time, addAmount);
   }
 });
