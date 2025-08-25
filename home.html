@@ -49,20 +49,27 @@
             <img src="./assets/payoo.png" alt="" />
           </div>
           <div>
-            <h3 id="show-balnce" class="font-bold flex items-center text-sm">
-              <img class="w-6 mb-0.5 mr-0.5" src="./assets/balance.webp" alt="" />
+            <h3 id="show-balance" class="font-bold flex items-center text-sm">
+              <img
+                class="w-6 mb-0.5 mr-0.5"
+                src="./assets/balance.webp"
+                alt=""
+              />
               <div id="balance" class="hidden">
                 <span id="amount" class="text-[#578a00] ml-1">45000</span
                 ><span class="font-bold text-sm">$</span>
               </div>
-              <span id="hide" class="text-[10px] font-bold  bg-[#e2f7bf] px-2 rounded-full"
+              <span
+                id="hide"
+                class="text-[10px] font-bold bg-[#e2f7bf] px-2 rounded-full"
                 >Tap to Show</span
               >
             </h3>
             <p class="text-[12px] text-[#08080880]">Available Balance</p>
           </div>
         </div>
-        <button id="log-out"
+        <button
+          id="log-out"
           class="flex items-center py-2 px-4 text-[#08080880] border border-[#0808081a] rounded-xl m-5"
         >
           <i class="fa-solid fa-arrow-right-from-bracket mr-2.5"></i
@@ -81,34 +88,52 @@
 
     <!-- option card section -->
     <div class="px-5 pb-6 grid grid-cols-3 gap-4 bg-white rounded-b-3xl">
-      <div class="option-btn py-4 border border-[#0808081a] rounded-xl">
+      <div
+        id="add-card"
+        class="option-btn py-4 border border-[#0808081a] rounded-xl"
+      >
         <img class="mx-auto transform" src="./assets/wallet1.png" alt="" />
         <p class="text-[12px] text-[#080808b3] text-center mt-2">Add Money</p>
       </div>
 
-      <div class="option-btn py-4 border border-[#0808081a] rounded-xl">
+      <div
+        id="out-card"
+        class="option-btn py-4 border border-[#0808081a] rounded-xl"
+      >
         <img class="mx-auto transform" src="./assets/send1.png" alt="" />
-        <p class="text-[12px] text-[#080808b3] text-center mt-2">Cashout</p>
+        <p class="text-[12px] text-[#080808b3] text-center mt-2">Cash Out</p>
       </div>
 
-      <div class="option-btn py-4 border border-[#0808081a] rounded-xl">
+      <div
+        id="transfer-card"
+        class="option-btn py-4 border border-[#0808081a] rounded-xl"
+      >
         <img class="mx-auto transform" src="./assets/money1.png" alt="" />
         <p class="text-[12px] text-[#080808b3] text-center mt-2">
           Transfer Money
         </p>
       </div>
 
-      <div class="option-btn py-4 border border-[#0808081a] rounded-xl">
+      <div
+        id="bonus-card"
+        class="option-btn py-4 border border-[#0808081a] rounded-xl"
+      >
         <img class="mx-auto transform" src="./assets/bonus1.png" alt="" />
         <p class="text-[12px] text-[#080808b3] text-center mt-2">Get Bonus</p>
       </div>
 
-      <div class="option-btn py-4 border border-[#0808081a] rounded-xl">
+      <div
+        id="bill-card"
+        class="option-btn py-4 border border-[#0808081a] rounded-xl"
+      >
         <img class="mx-auto transform" src="./assets/purse1.png" alt="" />
         <p class="text-[12px] text-[#080808b3] text-center mt-2">Pay Bill</p>
       </div>
 
-      <div class="option-btn py-4 border border-[#0808081a] rounded-xl">
+      <div
+        id="transaction-card"
+        class="option-btn py-4 border border-[#0808081a] rounded-xl"
+      >
         <img class="mx-auto transform" src="./assets/transaction1.png" alt="" />
         <p class="text-[12px] text-[#080808b3] text-center mt-2">
           Transactions
@@ -118,7 +143,7 @@
     <!-- fixed section end here -->
 
     <!-- latest transaction section -->
-    <div class="dynamc-section mt-6 mx-5">
+    <div class="dynamic-section mt-6 mx-5">
       <header class="flex justify-between items-center mb-4">
         <h4 class="font-semibold">Latest Payment</h4>
         <p class="text-[12px] text-[#08080880]">View All</p>
@@ -141,13 +166,154 @@
     </div>
 
     <!-- add money section -->
-    <div class="home dynamc-section mt-6 hidden">
+    <div
+      id="add-money-section"
+      class="dynamic-section mt-6 mx-5 hidden"
+    >
       <header class="flex justify-between items-center mb-4">
         <h4 class="font-semibold">Add Money</h4>
       </header>
-      <div></div>
+      <form class="flex flex-col bg-white p-4 gap-1 rounded-3xl">
+        <label for="bank">Select A Bank</label>
+        <select
+          class="bg-[#F4F5F7] font-light text-sm px-4 py-3 rounded-full outline-none focus:ring-1 focus:ring-sky-300 text-[#08080880]"
+          name="bank"
+          id="bank"
+        >
+          <option value="" disabled selected hidden>Select Bank</option>
+          <option value="">Dutch Bangla Bank</option>
+          <option value="">City Bank</option>
+          <option value="">Brac Bank</option>
+          <option value="">Islami Bank Bangladesh</option>
+          <option value="">Dhaka Bank</option>
+          <option value="">Other Bank</option>
+        </select>
+
+        <label class="mt-2" for="bank-number">Bank Account Number</label>
+        <input
+          class="bg-[#F4F5F7] font-light text-sm px-5 py-3 rounded-full outline-none focus:ring-1 focus:ring-sky-300 text-[#08080880]"
+          type="text"
+          name=""
+          id="ac-number"
+          placeholder="Enter 11 digit account number"
+        />
+
+        <label class="mt-2" for="amount">Amount to Add</label>
+        <input
+          class="bg-[#F4F5F7] font-light text-sm px-5 py-3 rounded-full outline-none focus:ring-1 focus:ring-sky-300 text-[#08080880]"
+          type="text"
+          name=""
+          id="amount"
+          placeholder="Add Amount to withdraw"
+        />
+
+        <label class="mt-2" for="pin">Pin Number</label>
+        <input
+          class="bg-[#F4F5F7] font-light text-sm px-5 py-3 rounded-full outline-none focus:ring-1 focus:ring-sky-300 text-[#08080880]"
+          type="text"
+          name=""
+          id="add-pin"
+          placeholder="Enter 4 digit pin number"
+        />
+
+        <button
+          id="add-money"
+          class="bg-[#0874F2] text-white mt-10 px-4 py-3 rounded-full font-semibold"
+        >
+          Add Money
+        </button>
+      </form>
     </div>
 
+    <!-- cash out section -->
+    <div
+      id="cash-out-section"
+      class="dynamic-section mt-6 mx-5 hidden"
+    >
+      <header class="flex justify-between items-center mb-4">
+        <h4 class="font-semibold">Cash Out</h4>
+      </header>
+      <form class="flex flex-col bg-white p-4 gap-1 rounded-3xl">
+        <label class="mt-2" for="agent">Agent Number</label>
+        <input
+          class="bg-[#F4F5F7] font-light text-sm px-5 py-3 rounded-full outline-none focus:ring-1 focus:ring-sky-300 text-[#08080880]"
+          type="text"
+          name=""
+          id="agent-number"
+          placeholder="Enter 11 digit number"
+        />
+
+        <label class="mt-2" for="withdraw-amount">Amount</label>
+        <input
+          class="bg-[#F4F5F7] font-light text-sm px-5 py-3 rounded-full outline-none focus:ring-1 focus:ring-sky-300 text-[#08080880]"
+          type="text"
+          name=""
+          id="out-amount"
+          placeholder="Add Amount to withdraw"
+        />
+
+        <label class="mt-2" for="pin">Pin Number</label>
+        <input
+          class="bg-[#F4F5F7] font-light text-sm px-5 py-3 rounded-full outline-none focus:ring-1 focus:ring-sky-300 text-[#08080880]"
+          type="text"
+          name=""
+          id="out-pin"
+          placeholder="Enter 4 digit pin number"
+        />
+
+        <button
+          id="out-money"
+          class="bg-[#0874F2] text-white mt-10 px-4 py-3 rounded-full font-semibold"
+        >
+          Withdraw Money
+        </button>
+      </form>
+    </div>
+
+    <!-- Transfer section -->
+    <div
+      id="transfer-section"
+      class="dynamic-section mt-6 mx-5 hidden"
+    >
+      <header class="flex justify-between items-center mb-4">
+        <h4 class="font-semibold">Transfer Money</h4>
+      </header>
+      <form class="flex flex-col bg-white p-4 gap-1 rounded-3xl">
+        <label class="mt-2" for="agent">User Account Number</label>
+        <input
+          class="bg-[#F4F5F7] font-light text-sm px-5 py-3 rounded-full outline-none focus:ring-1 focus:ring-sky-300 text-[#08080880]"
+          type="text"
+          name=""
+          id="user-number"
+          placeholder="Enter 11 digit number"
+        />
+
+        <label class="mt-2" for="withdraw-amount">Amount</label>
+        <input
+          class="bg-[#F4F5F7] font-light text-sm px-5 py-3 rounded-full outline-none focus:ring-1 focus:ring-sky-300 text-[#08080880]"
+          type="text"
+          name=""
+          id="transfer-amount"
+          placeholder="Add Amount to transfer"
+        />
+
+        <label class="mt-2" for="pin">Pin Number</label>
+        <input
+          class="bg-[#F4F5F7] font-light text-sm px-5 py-3 rounded-full outline-none focus:ring-1 focus:ring-sky-300 text-[#08080880]"
+          type="text"
+          name=""
+          id="transfer-pin"
+          placeholder="Enter 4 digit pin number"
+        />
+
+        <button
+          id="transfer-btn"
+          class="bg-[#0874F2] text-white mt-10 px-4 py-3 rounded-full font-semibold"
+        >
+          Send Now
+        </button>
+      </form>
+    </div>
     <script src="./home.js"></script>
   </body>
 </html>
