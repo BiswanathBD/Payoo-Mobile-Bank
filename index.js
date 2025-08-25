@@ -31,9 +31,9 @@ loginBtn.addEventListener("click", function (e) {
   const pin = getByID("pin").value;
 
   if (numStr.length !== 10 || !numStr.startsWith("1")) {
-    alert("Invalid Number");
+    alert("Invalid Number (Enter valid Bangladeshi Number)");
   } else if (pin !== numStr.slice(-4)) {
-    alert("Invalid Pin");
+    alert("Invalid Pin (Enter last 4 digit of your Number)");
   } else {
     window.location.href = "./home.html";
   }
