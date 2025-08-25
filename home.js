@@ -6,7 +6,10 @@ getById("show-balnce").addEventListener("click", function () {
   getById("hide").classList.add("hidden");
 
   setTimeout(() => {
-      getById("balance").classList.add("hidden");
-  getById("hide").classList.remove("hidden");
-  }, 5000)
+    getById("balance").classList.add("hidden");
+    getById("hide").classList.remove("hidden");
+  }, 5000);
+});
+getById("log-out").addEventListener("click", function () {
+  window.location.href = "./index.html";
 });
