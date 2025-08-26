@@ -91,7 +91,7 @@ function newLatestTrs(type, time, amount) {
     latestTrnsIcon.src = "./assets/money1.png";
   } else if (type == "Get Bonus") {
     latestTrnsIcon.src = "./assets/bonus1.png";
-  } else if (type == "Pay Bill") {
+  } else if (type.length > 0) {
     latestTrnsIcon.src = "./assets/purse1.png";
   }
 
@@ -120,7 +120,7 @@ function newTrns(type, time, amount) {
     trnsIcon.src = "./assets/money1.png";
   } else if (type === "Get Bonus") {
     trnsIcon.src = "./assets/bonus1.png";
-  } else if (type === "Pay Bill") {
+  } else if (type.length > 0) {
     trnsIcon.src = "./assets/purse1.png";
   }
 
@@ -283,4 +283,45 @@ bonusBtn.addEventListener("click", function (e) {
 
     getById("bonus-coupon").value = "";
   }
+});
+
+// pay bill section
+const payBtn = getById("pay-btn");
+
+payBtn.addEventListener("click", function (e) {
+  e.preventDefault();
+  const bill = getById("bill").value;
+  const billNumber = getById("bill-number").value.trim();
+  const billAmount = getById("bill-amount").value.trim();
+  const billPin = getById("bill-pin").value;
+
+  if (bill === "") {
+    alert("Select Bill Type");
+  } else if (billNumber.length <= 0 || isNaN(Number(billNumber))) {
+    alert("Invalid Bill Number");
+  } else if (
+    billAmount <= 0 ||
+    isNaN(Number(billAmount)) ||
+    billAmount > currentBalance
+  ) {
+    console.log(billAmount);
+    alert("Invalid Amount");
+  } else if (billPin !== commonPin) {
+    alert("Wrong Pin (Use 4848)");
+  } else {
+    currentBalance -= parseInt(billAmount);
+    getById("current-balance").innerText = currentBalance;
+    showHide();
+    alert("Pay Bill Successful");
+    hiddenToggle("latest-transaction");
+    const time = new Date().toLocaleString();
+
+    newLatestTrs(bill, time, billAmount);
+    newTrns(bill, time, billAmount);
+
+    getById("bill").value = "";
+    getById("bill-number").value = "";
+    getById("bill-amount").value = "";
+  }
+  getById("bill-pin").value = "";
 });
