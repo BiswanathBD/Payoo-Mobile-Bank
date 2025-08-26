@@ -45,7 +45,11 @@
         class="flex justify-between items-center border-b border-[#0808081a]"
       >
         <div class="flex items-center gap-1">
-            <img class="w-14 h-14 p-1 mr-1 ml-3 rounded-full" src="./assets/Biswanath.jpg" alt="" />
+          <img
+            class="w-14 h-14 p-1 mr-1 ml-3 rounded-full"
+            src="./assets/Biswanath.jpg"
+            alt=""
+          />
           <div>
             <h3 id="show-balance" class="font-bold flex items-center text-sm">
               <img
@@ -142,7 +146,7 @@
     <!-- fixed section end here -->
 
     <!-- latest transaction section -->
-    <div id="latest-transaction" class="dynamic-section mt-6 mx-5  pb-4">
+    <div id="latest-transaction" class="dynamic-section mt-6 mx-5 pb-4">
       <header class="flex justify-between items-center mb-4">
         <h4 class="font-semibold">Latest Payment</h4>
         <p class="text-[12px] text-[#08080880]">View All</p>
@@ -271,7 +275,7 @@
     </div>
 
     <!-- Transfer section -->
-    <div id="transfer-section" class="dynamic-section mt-6 mx-5 pb-4">
+    <div id="transfer-section" class="dynamic-section mt-6 mx-5 pb-4 hidden">
       <header class="flex justify-between items-center mb-4">
         <h4 class="font-semibold">Transfer Money</h4>
       </header>
@@ -328,16 +332,16 @@
         />
 
         <button
-          id="transfer-btn"
+          id="bonus-btn"
           class="bg-[#0874F2] text-white mt-10 px-4 py-3 rounded-full font-semibold"
         >
-          Send Now
+          Get Bonus
         </button>
       </form>
     </div>
 
     <!-- pay bill section -->
-         <div id="bill-section" class="dynamic-section mt-6 mx-5 pb-4 hidden">
+    <div id="bill-section" class="dynamic-section mt-6 mx-5 pb-4 hidden">
       <header class="flex justify-between items-center mb-4">
         <h4 class="font-semibold">Pay bill</h4>
       </header>
@@ -393,7 +397,7 @@
       </form>
     </div>
 
-        <!-- transaction section -->
+    <!-- transaction section -->
     <div id="transaction-section" class="dynamic-section mt-6 mx-5 pb-4 hidden">
       <header class="flex justify-between items-center mb-4">
         <h4 class="font-semibold">Transaction History</h4>
@@ -410,7 +414,9 @@
               <img id="transaction-icon" src="./assets/wallet1.png" alt="" />
             </div>
             <div>
-              <h3 id="transaction-type" class="text-sm font-semibold">Add Money</h3>
+              <h3 id="transaction-type" class="text-sm font-semibold">
+                Add Money
+              </h3>
               <p id="transaction-time" class="text-[10px] text-[#08080880]">
                 1/1/2025, 10:30:54 AM
               </p>

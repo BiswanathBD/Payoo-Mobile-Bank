@@ -228,3 +228,59 @@ transferBtn.addEventListener("click", function (e) {
   }
   getById("transfer-pin").value = "";
 });
+
+// get Bonus section
+const bonusBtn = getById("bonus-btn");
+// coupons
+const coupons = [
+  "GET0BONUS005",
+  "GET0BONUS010",
+  "GET0BONUS020",
+  "GET0BONUS050",
+  "GET0BONUS100",
+];
+
+bonusBtn.addEventListener("click", function (e) {
+  e.preventDefault();
+  const couponCode = getById("bonus-coupon").value;
+  let bonusAmount = 0;
+
+  if (couponCode === coupons[0]) {
+    bonusAmount = 5;
+    alert("You Got 5$");
+  } else if (couponCode === coupons[1]) {
+    bonusAmount = 10;
+    alert("You Got 10$");
+  } else if (couponCode === coupons[2]) {
+    bonusAmount = 20;
+    alert("You Got 20$");
+  } else if (couponCode === coupons[3]) {
+    bonusAmount = 50;
+    alert("You Got 50$");
+  } else if (couponCode === coupons[4]) {
+    bonusAmount = 100;
+    alert("You Got 100$");
+  } else {
+    // copied from ChatGPT
+    alert("Invalid Coupon!\n\nOur Coupons:\n" + coupons.join("\n"));
+  }
+  console.log(bonusAmount);
+
+  if (bonusAmount > 0) {
+    console.log(bonusAmount);
+
+    currentBalance += bonusAmount;
+    console.log(currentBalance);
+
+    getById("current-balance").innerText = currentBalance;
+    showHide();
+    hiddenToggle("latest-transaction");
+
+    const time = new Date().toLocaleString();
+
+    newLatestTrs("Get Bonus", time, bonusAmount);
+    newTrns("Get Bonus", time, bonusAmount);
+
+    getById("bonus-coupon").value = "";
+  }
+});
