@@ -84,15 +84,15 @@ function newLatestTrs(type, time, amount) {
   const latestTrnsIcon = latestTrnsClone.querySelector("#trns-icon");
 
   if (type == "Add Money") {
-    latestTrnsIcon.src = "./assets/wallet1.png";
+    latestTrnsIcon.src = "./assets/add-money.png";
   } else if (type == "Cash Out") {
     latestTrnsIcon.src = "./assets/send1.png";
   } else if (type == "Transfer Money") {
-    latestTrnsIcon.src = "./assets/money1.png";
+    latestTrnsIcon.src = "./assets/transfer.svg";
   } else if (type == "Get Bonus") {
-    latestTrnsIcon.src = "./assets/bonus1.png";
+    latestTrnsIcon.src = "./assets/bonus.png";
   } else if (type.length > 0) {
-    latestTrnsIcon.src = "./assets/purse1.png";
+    latestTrnsIcon.src = "./assets/pay.webp";
   }
 
   latestTrnsParent.appendChild(latestTrnsClone);
@@ -113,15 +113,15 @@ function newTrns(type, time, amount) {
   const trnsIcon = trnsClone.querySelector("#transaction-icon");
 
   if (type === "Add Money") {
-    trnsIcon.src = "./assets/wallet1.png";
+    trnsIcon.src = "./assets/add-money.png";
   } else if (type === "Cash Out") {
     trnsIcon.src = "./assets/send1.png";
   } else if (type === "Transfer Money") {
-    trnsIcon.src = "./assets/money1.png";
+    trnsIcon.src = "./assets/transfer.svg";
   } else if (type === "Get Bonus") {
-    trnsIcon.src = "./assets/bonus1.png";
+    trnsIcon.src = "./assets/bonus.png";
   } else if (type.length > 0) {
-    trnsIcon.src = "./assets/purse1.png";
+    trnsIcon.src = "./assets/pay.webp";
   }
 
   TrnsParent.appendChild(trnsClone);

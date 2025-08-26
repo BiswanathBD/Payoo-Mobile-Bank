@@ -95,7 +95,11 @@
         id="add-card"
         class="option-btn py-4 border border-[#0808081a] rounded-xl"
       >
-        <img class="mx-auto transform" src="./assets/wallet1.png" alt="" />
+        <img
+          class="mx-auto transform w-6"
+          src="./assets/add-money.png"
+          alt=""
+        />
         <p class="text-[12px] text-[#080808b3] text-center mt-2">Add Money</p>
       </div>
 
@@ -103,7 +107,11 @@
         id="out-card"
         class="option-btn py-4 border border-[#0808081a] rounded-xl"
       >
-        <img class="mx-auto transform" src="./assets/send1.png" alt="" />
+        <img
+          class="mx-auto transform w-6 h-6"
+          src="./assets/send1.png"
+          alt=""
+        />
         <p class="text-[12px] text-[#080808b3] text-center mt-2">Cash Out</p>
       </div>
 
@@ -111,7 +119,11 @@
         id="transfer-card"
         class="option-btn py-4 border border-[#0808081a] rounded-xl"
       >
-        <img class="mx-auto transform" src="./assets/money1.png" alt="" />
+        <img
+          class="mx-auto transform w-6 h-6"
+          src="./assets/transfer.svg"
+          alt=""
+        />
         <p class="text-[12px] text-[#080808b3] text-center mt-2">
           Transfer Money
         </p>
@@ -121,7 +133,11 @@
         id="bonus-card"
         class="option-btn py-4 border border-[#0808081a] rounded-xl"
       >
-        <img class="mx-auto transform" src="./assets/bonus1.png" alt="" />
+        <img
+          class="mx-auto transform w-6 h-6"
+          src="./assets/bonus.png"
+          alt=""
+        />
         <p class="text-[12px] text-[#080808b3] text-center mt-2">Get Bonus</p>
       </div>
 
@@ -129,7 +145,7 @@
         id="bill-card"
         class="option-btn py-4 border border-[#0808081a] rounded-xl"
       >
-        <img class="mx-auto transform" src="./assets/purse1.png" alt="" />
+        <img class="mx-auto transform w-6 h-6" src="./assets/pay.webp" alt="" />
         <p class="text-[12px] text-[#080808b3] text-center mt-2">Pay Bill</p>
       </div>
 
@@ -137,7 +153,11 @@
         id="trns-card"
         class="option-btn py-4 border border-[#0808081a] rounded-xl"
       >
-        <img class="mx-auto transform" src="./assets/transaction1.png" alt="" />
+        <img
+          class="mx-auto transform w-6 h-6"
+          src="./assets/transaction.png"
+          alt=""
+        />
         <p class="text-[12px] text-[#080808b3] text-center mt-2">
           Transactions
         </p>
@@ -159,7 +179,12 @@
         >
           <div class="flex gap-2 items-center">
             <div class="bg-[#F4F5F7] p-2 rounded-full">
-              <img id="trns-icon" src="./assets/wallet1.png" alt="" />
+              <img
+                class="w-6"
+                id="trns-icon"
+                src="./assets/add-money.png"
+                alt=""
+              />
             </div>
             <div>
               <h3 id="trns-type" class="text-sm font-semibold">Add Money</h3>
@@ -341,7 +366,7 @@
     </div>
 
     <!-- pay bill section -->
-    <div id="bill-section" class="dynamic-section mt-6 mx-5 pb-4">
+    <div id="bill-section" class="dynamic-section mt-6 mx-5 pb-4 hidden">
       <header class="flex justify-between items-center mb-4">
         <h4 class="font-semibold">Pay bill</h4>
       </header>
@@ -382,7 +407,7 @@
         <label class="mt-2" for="pin">Pin Number</label>
         <input
           class="bg-[#F4F5F7] font-light text-sm px-5 py-3 rounded-full outline-none focus:ring-1 focus:ring-sky-300 text-[#08080880]"
-          type="text"
+          type="password"
           name=""
           id="bill-pin"
           placeholder="Enter 4 digit pin number"
@@ -411,7 +436,12 @@
         >
           <div class="flex gap-2 items-center">
             <div class="bg-[#F4F5F7] p-2 rounded-full">
-              <img id="transaction-icon" src="./assets/wallet1.png" alt="" />
+              <img
+                class="w-6"
+                id="transaction-icon"
+                src="./assets/add-money.png"
+                alt=""
+              />
             </div>
             <div>
               <h3 id="transaction-type" class="text-sm font-semibold">
