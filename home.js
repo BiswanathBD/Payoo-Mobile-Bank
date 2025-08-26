@@ -193,3 +193,38 @@ outBtn.addEventListener("click", function (e) {
   }
   getById("out-pin").value = "";
 });
+
+// transfer money feature
+const transferBtn = getById("transfer-btn");
+transferBtn.addEventListener("click", function (e) {
+  e.preventDefault();
+  const userNumber = getById("user-number").value.trim();
+  const transferAmount = getById("transfer-amount").value.trim();
+  const transferPin = getById("transfer-pin").value;
+
+  if (
+    userNumber.length !== 11 ||
+    isNaN(Number(userNumber)) ||
+    !userNumber.startsWith("01")
+  ) {
+    alert("Invalid Number (Enter valid Bangladeshi Number)");
+  } else if (transferAmount <= 0 || transferAmount > currentBalance) {
+    alert("Invalid Amount");
+  } else if (transferPin !== commonPin) {
+    alert("Wrong Pin (Use 4848)");
+  } else {
+    currentBalance -= parseInt(transferAmount);
+    getById("current-balance").innerText = currentBalance;
+    showHide();
+    alert("Transfer Successful");
+    hiddenToggle("latest-transaction");
+    const time = new Date().toLocaleString();
+
+    newLatestTrs("Transfer Money", time, transferAmount);
+    newTrns("Transfer Money", time, transferAmount);
+
+    getById("user-number").value = "";
+    getById("transfer-amount").value = "";
+  }
+  getById("transfer-pin").value = "";
+});
