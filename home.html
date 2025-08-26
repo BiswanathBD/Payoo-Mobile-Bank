@@ -130,7 +130,7 @@
       </div>
 
       <div
-        id="transaction-card"
+        id="trns-card"
         class="option-btn py-4 border border-[#0808081a] rounded-xl"
       >
         <img class="mx-auto transform" src="./assets/transaction1.png" alt="" />
@@ -393,6 +393,35 @@
       </form>
     </div>
 
+        <!-- transaction section -->
+    <div id="transaction-section" class="dynamic-section mt-6 mx-5 pb-4 hidden">
+      <header class="flex justify-between items-center mb-4">
+        <h4 class="font-semibold">Transaction History</h4>
+        <p class="text-[12px] text-[#08080880]">View All</p>
+      </header>
+
+      <div id="transaction-parent" class="flex flex-col gap-2">
+        <div
+          id="transaction-card"
+          class="flex justify-between items-center bg-white rounded-md p-1"
+        >
+          <div class="flex gap-2 items-center">
+            <div class="bg-[#F4F5F7] p-2 rounded-full">
+              <img id="transaction-icon" src="./assets/wallet1.png" alt="" />
+            </div>
+            <div>
+              <h3 id="transaction-type" class="text-sm font-semibold">Add Money</h3>
+              <p id="transaction-time" class="text-[10px] text-[#08080880]">
+                1/1/2025, 10:30:54 AM
+              </p>
+            </div>
+          </div>
+          <h3 class="text-sm font-semibold mx-5">
+            <span id="transaction-amount">45000</span> $
+          </h3>
+        </div>
+      </div>
+    </div>
     <script src="./home.js"></script>
   </body>
 </html>

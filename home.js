@@ -63,37 +63,67 @@ billCard.addEventListener("click", function () {
   hiddenToggle("bill-section");
 });
 
+// transaction card
+const transactionCard = getById("trns-card");
+transactionCard.addEventListener("click", function () {
+  hiddenToggle("transaction-section");
+});
 
-
-// transaction history feature
-const latestTensParent = getById("history-parent");
-const latestTens = getById("history-card");
+// latest transaction feature
+const latestTrnsParent = getById("history-parent");
+const latestTrns = getById("history-card");
 function newLatestTrs(type, time, amount) {
-  const latestTensClone = latestTens.cloneNode(true);
-  latestTensClone.removeAttribute("id");
+  const latestTrnsClone = latestTrns.cloneNode(true);
+  latestTrnsClone.removeAttribute("id");
 
-  latestTensClone.querySelector("#trns-type").innerText = type;
-  latestTensClone.querySelector("#trns-time").innerText = time;
-  latestTensClone.querySelector("#trns-amount").innerText = amount;
+  latestTrnsClone.querySelector("#trns-type").innerText = type;
+  latestTrnsClone.querySelector("#trns-time").innerText = time;
+  latestTrnsClone.querySelector("#trns-amount").innerText = amount;
 
-  const trnsIcon = latestTensClone.querySelector("#trns-icon");
+  const latestTrnsIcon = latestTrnsClone.querySelector("#trns-icon");
+
   if (type == "Add Money") {
-    trnsIcon.src = "./assets/wallet1.png";
+    latestTrnsIcon.src = "./assets/wallet1.png";
+  } else if (type == "Cash Out") {
+    latestTrnsIcon.src = "./assets/send1.png";
+  } else if (type == "Transfer Money") {
+    latestTrnsIcon.src = "./assets/money1.png";
+  } else if (type == "Get Bonus") {
+    latestTrnsIcon.src = "./assets/bonus1.png";
+  } else if (type == "Pay Bill") {
+    latestTrnsIcon.src = "./assets/purse1.png";
   }
 
-  if (type == "Add Money") {
+  latestTrnsParent.appendChild(latestTrnsClone);
+}
+
+// transactions history feature
+const TrnsParent = getById("transaction-parent");
+const trns = getById("transaction-card");
+
+function newTrns(type, time, amount) {
+  const trnsClone = trns.cloneNode(true);
+  trnsClone.removeAttribute("id");
+
+  trnsClone.querySelector("#transaction-type").innerText = type;
+  trnsClone.querySelector("#transaction-time").innerText = time;
+  trnsClone.querySelector("#transaction-amount").innerText = amount;
+
+  const trnsIcon = trnsClone.querySelector("#transaction-icon");
+
+  if (type === "Add Money") {
     trnsIcon.src = "./assets/wallet1.png";
-  } else if (type == "Cash Out") {
+  } else if (type === "Cash Out") {
     trnsIcon.src = "./assets/send1.png";
-  } else if (type == "Transfer Money") {
+  } else if (type === "Transfer Money") {
     trnsIcon.src = "./assets/money1.png";
-  } else if (type == "Get Bonus") {
+  } else if (type === "Get Bonus") {
     trnsIcon.src = "./assets/bonus1.png";
-  } else if (type == "Pay Bill") {
+  } else if (type === "Pay Bill") {
     trnsIcon.src = "./assets/purse1.png";
   }
 
-  latestTensParent.appendChild(latestTensClone);
+  TrnsParent.appendChild(trnsClone);
 }
 
 // add money feature
@@ -123,5 +153,6 @@ addBtn.addEventListener("click", function (e) {
     const time = new Date().toLocaleString();
 
     newLatestTrs("Add Money", time, addAmount);
+    newTrns("Add Money", time, addAmount);
   }
 });
