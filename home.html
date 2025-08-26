@@ -142,7 +142,7 @@
     <!-- fixed section end here -->
 
     <!-- latest transaction section -->
-    <div id="latest-transaction" class="dynamic-section mt-6 mx-5">
+    <div id="latest-transaction" class="dynamic-section mt-6 mx-5  pb-4">
       <header class="flex justify-between items-center mb-4">
         <h4 class="font-semibold">Latest Payment</h4>
         <p class="text-[12px] text-[#08080880]">View All</p>
@@ -172,7 +172,7 @@
     </div>
 
     <!-- add money section -->
-    <div id="add-money-section" class="dynamic-section mt-6 mx-5 hidden">
+    <div id="add-money-section" class="dynamic-section mt-6 mx-5 pb-4 hidden">
       <header class="flex justify-between items-center mb-4">
         <h4 class="font-semibold">Add Money</h4>
       </header>
@@ -207,7 +207,7 @@
           type="text"
           name=""
           id="add-amount"
-          placeholder="Add Amount to withdraw"
+          placeholder="Enter amount to add"
         />
 
         <label class="mt-2" for="pin">Pin Number</label>
@@ -229,7 +229,7 @@
     </div>
 
     <!-- cash out section -->
-    <div id="cash-out-section" class="dynamic-section mt-6 mx-5 hidden">
+    <div id="cash-out-section" class="dynamic-section mt-6 mx-5 pb-4 hidden">
       <header class="flex justify-between items-center mb-4">
         <h4 class="font-semibold">Cash Out</h4>
       </header>
@@ -249,7 +249,7 @@
           type="text"
           name=""
           id="out-amount"
-          placeholder="Add Amount to withdraw"
+          placeholder="Enter amount to withdraw"
         />
 
         <label class="mt-2" for="pin">Pin Number</label>
@@ -271,7 +271,7 @@
     </div>
 
     <!-- Transfer section -->
-    <div id="transfer-section" class="dynamic-section mt-6 mx-5 hidden">
+    <div id="transfer-section" class="dynamic-section mt-6 mx-5 pb-4 hidden">
       <header class="flex justify-between items-center mb-4">
         <h4 class="font-semibold">Transfer Money</h4>
       </header>
@@ -291,7 +291,7 @@
           type="text"
           name=""
           id="transfer-amount"
-          placeholder="Add Amount to transfer"
+          placeholder="Enter amount to transfer"
         />
 
         <label class="mt-2" for="pin">Pin Number</label>
@@ -313,7 +313,7 @@
     </div>
 
     <!-- get bonus section -->
-    <div id="bonus-section" class="dynamic-section mt-6 mx-5 hidden">
+    <div id="bonus-section" class="dynamic-section mt-6 mx-5 pb-4 hidden">
       <header class="flex justify-between items-center mb-4">
         <h4 class="font-semibold">Get Bonus</h4>
       </header>
@@ -324,7 +324,7 @@
           type="text"
           name=""
           id="bonus-coupon"
-          placeholder="Enter Bonus Coupon"
+          placeholder="Enter Coupon"
         />
 
         <button
@@ -332,6 +332,63 @@
           class="bg-[#0874F2] text-white mt-10 px-4 py-3 rounded-full font-semibold"
         >
           Send Now
+        </button>
+      </form>
+    </div>
+
+    <!-- pay bill section -->
+         <div id="bill-section" class="dynamic-section mt-6 mx-5 pb-4 hidden">
+      <header class="flex justify-between items-center mb-4">
+        <h4 class="font-semibold">Pay bill</h4>
+      </header>
+      <form class="flex flex-col bg-white p-4 gap-1 rounded-3xl">
+        <label for="bill">Select Bill to Pay</label>
+        <select
+          class="bg-[#F4F5F7] font-light text-sm px-4 py-3 rounded-full outline-none focus:ring-1 focus:ring-sky-300 text-[#08080880]"
+          name="bill"
+          id="bill"
+        >
+          <option value="" disabled selected hidden>Select Bill Type</option>
+          <option value="0">Electricity</option>
+          <option value="1">Internet</option>
+          <option value="2">Gas</option>
+          <option value="3">Mobile</option>
+          <option value="4">Water</option>
+          <option value="5">Others bill</option>
+        </select>
+
+        <label class="mt-2" for="bill-number">Biller Account Number</label>
+        <input
+          class="bg-[#F4F5F7] font-light text-sm px-5 py-3 rounded-full outline-none focus:ring-1 focus:ring-sky-300 text-[#08080880]"
+          type="text"
+          name=""
+          id="bill-number"
+          placeholder="Enter account number"
+        />
+
+        <label class="mt-2" for="amount">Amount to Pay</label>
+        <input
+          class="bg-[#F4F5F7] font-light text-sm px-5 py-3 rounded-full outline-none focus:ring-1 focus:ring-sky-300 text-[#08080880]"
+          type="text"
+          name=""
+          id="bill-amount"
+          placeholder="Enter amount to pay"
+        />
+
+        <label class="mt-2" for="pin">Pin Number</label>
+        <input
+          class="bg-[#F4F5F7] font-light text-sm px-5 py-3 rounded-full outline-none focus:ring-1 focus:ring-sky-300 text-[#08080880]"
+          type="text"
+          name=""
+          id="bill-pin"
+          placeholder="Enter 4 digit pin number"
+        />
+
+        <button
+          id="pay-btn"
+          class="bg-[#0874F2] text-white mt-10 px-4 py-3 rounded-full font-semibold"
+        >
+          Pay Now
         </button>
       </form>
     </div>

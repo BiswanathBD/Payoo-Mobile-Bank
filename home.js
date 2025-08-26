@@ -57,6 +57,14 @@ bonusCard.addEventListener("click", function () {
   hiddenToggle("bonus-section");
 });
 
+// bill pay
+const billCard = getById("bill-card");
+billCard.addEventListener("click", function () {
+  hiddenToggle("bill-section");
+});
+
+
+
 // transaction history feature
 const latestTensParent = getById("history-parent");
 const latestTens = getById("history-card");
