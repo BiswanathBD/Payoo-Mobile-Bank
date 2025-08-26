@@ -29,6 +29,7 @@ function hiddenToggle(id) {
   getById(id).classList.remove("hidden");
 }
 
+// current Balance
 let Balance = getById("current-balance").innerText;
 let currentBalance = parseInt(Balance);
 
@@ -132,7 +133,7 @@ const addBtn = getById("add-money");
 addBtn.addEventListener("click", function (e) {
   e.preventDefault();
   const selectBank = getById("bank").value;
-  let acNumber = getById("ac-number").value.trim();
+  const acNumber = getById("ac-number").value.trim();
   const addAmount = getById("add-amount").value.trim();
   const addPin = getById("add-pin").value;
 
@@ -143,16 +144,52 @@ addBtn.addEventListener("click", function (e) {
   } else if (addAmount < 0 || isNaN(Number(addAmount))) {
     alert("Invalid Amount");
   } else if (addPin !== commonPin) {
-    alert("Invalid Amount");
+    alert("Wrong Pin (Use 4848)");
   } else {
     currentBalance += parseInt(addAmount);
     getById("current-balance").innerText = currentBalance;
     showHide();
-    // alert("Add Money Successful");
+    alert("Add Money Successful");
     hiddenToggle("latest-transaction");
     const time = new Date().toLocaleString();
 
     newLatestTrs("Add Money", time, addAmount);
     newTrns("Add Money", time, addAmount);
+
+    getById("bank").value = "";
+    getById("ac-number").value = "";
+    getById("add-amount").value = "";
   }
+  getById("add-pin").value = "";
+});
+
+// cash out features
+const outBtn = getById("out-btn");
+outBtn.addEventListener("click", function (e) {
+  e.preventDefault();
+  const agentNumber = getById("agent-number").value.trim();
+  const outAmount = getById("out-amount").value.trim();
+  const outPin = getById("out-pin").value;
+
+  if (agentNumber.length !== 11 || isNaN(Number(agentNumber))) {
+    alert("Agent Not Exit");
+  } else if (outAmount <= 0 || outAmount > currentBalance) {
+    alert("Invalid Amount");
+  } else if (outPin !== commonPin) {
+    alert("Wrong Pin (Use 4848)");
+  } else {
+    currentBalance -= parseInt(outAmount);
+    getById("current-balance").innerText = currentBalance;
+    showHide();
+    alert("Cash Out Successful");
+    hiddenToggle("latest-transaction");
+    const time = new Date().toLocaleString();
+
+    newLatestTrs("Cash Out", time, outAmount);
+    newTrns("Cash Out", time, outAmount);
+
+    getById("agent-number").value = "";
+    getById("out-amount").value = "";
+  }
+  getById("out-pin").value = "";
 });
