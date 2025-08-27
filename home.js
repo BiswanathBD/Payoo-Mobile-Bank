@@ -18,7 +18,7 @@ getById("log-out").addEventListener("click", function () {
 });
 
 // common features
-const commonPin = "4848";
+const validPin = localStorage.getItem("userPin");
 
 const sections = document.getElementsByClassName("dynamic-section");
 
@@ -143,8 +143,8 @@ addBtn.addEventListener("click", function (e) {
     alert("Invalid Account Number");
   } else if (addAmount < 0 || isNaN(Number(addAmount))) {
     alert("Invalid Amount");
-  } else if (addPin !== commonPin) {
-    alert("Wrong Pin (Use 4848)");
+  } else if (addPin !== validPin) {
+    alert("Wrong Pin");
   } else {
     currentBalance += parseInt(addAmount);
     getById("current-balance").innerText = currentBalance;
@@ -175,8 +175,8 @@ outBtn.addEventListener("click", function (e) {
     alert("Agent Not Exit");
   } else if (outAmount <= 0 || outAmount > currentBalance) {
     alert("Invalid Amount");
-  } else if (outPin !== commonPin) {
-    alert("Wrong Pin (Use 4848)");
+  } else if (outPin !== validPin) {
+    alert("Wrong Pin");
   } else {
     currentBalance -= parseInt(outAmount);
     getById("current-balance").innerText = currentBalance;
@@ -210,8 +210,8 @@ transferBtn.addEventListener("click", function (e) {
     alert("Invalid Number (Enter valid Bangladeshi Number)");
   } else if (transferAmount <= 0 || transferAmount > currentBalance) {
     alert("Invalid Amount");
-  } else if (transferPin !== commonPin) {
-    alert("Wrong Pin (Use 4848)");
+  } else if (transferPin !== validPin) {
+    alert("Wrong Pin");
   } else {
     currentBalance -= parseInt(transferAmount);
     getById("current-balance").innerText = currentBalance;
@@ -306,8 +306,8 @@ payBtn.addEventListener("click", function (e) {
   ) {
     console.log(billAmount);
     alert("Invalid Amount");
-  } else if (billPin !== commonPin) {
-    alert("Wrong Pin (Use 4848)");
+  } else if (billPin !== validPin) {
+    alert("Wrong Pin");
   } else {
     currentBalance -= parseInt(billAmount);
     getById("current-balance").innerText = currentBalance;

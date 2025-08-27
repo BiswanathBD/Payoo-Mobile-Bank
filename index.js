@@ -5,26 +5,8 @@ function getByID(id) {
 
 const loginBtn = getByID("login-btn");
 
-// const validMobileNumber = "01628284848";
-// const validPin = 4848;
-
-// loginBtn.addEventListener("click", function (e) {
-//   e.preventDefault();
-//   const mobileNumber = getByID("mobile").value;
-//   const pin = parseInt(getByID("pin").value);
-
-//   if (mobileNumber === validMobileNumber && pin === validPin) {
-//     window.location.href = "./home.html";
-//   } else {
-//     getByID("mobile").value = "";
-//     getByID("pin").value = "";
-//     alert("Mobile Number or Pin incorrect");
-//   }
-// });
-
 loginBtn.addEventListener("click", function (e) {
   e.preventDefault();
-  console.log("login btn clicked");
 
   const mobileNumber = parseInt(getByID("mobile").value);
   const numStr = mobileNumber.toString();
@@ -36,6 +18,8 @@ loginBtn.addEventListener("click", function (e) {
     alert("Invalid Pin (Enter last 4 digit of your Number)");
   } else {
     window.location.href = "./home.html";
+    alert("Remember Your Pin " + "(" + pin + ")");
+    localStorage.setItem("userPin", pin);
   }
 });
 
