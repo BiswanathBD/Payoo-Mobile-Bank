@@ -27,7 +27,28 @@ function hiddenToggle(id) {
     section.classList.add("hidden");
   }
   getById(id).classList.remove("hidden");
+  const allCards = document.querySelectorAll(".option-btn");
+  allCards.forEach((cards) => {
+    cards.classList.remove("bg-blue-50");
+    cards.classList.replace("border-blue-100", "border-[#0808081a]");
+  });
 }
+
+// selected card
+const options = getById("options-container");
+const allCards = document.querySelectorAll(".option-btn");
+options.addEventListener("click", function (e) {
+  e.preventDefault();
+  const card = e.target.closest(".option-btn");
+  if (card) {
+    allCards.forEach((cards) => {
+      cards.classList.remove("bg-blue-50");
+      cards.classList.replace("border-blue-100", "border-[#0808081a]");
+    });
+    card.classList.replace("border-[#0808081a]", "border-blue-200");
+    card.classList.add("bg-blue-50");
+  }
+});
 
 // current Balance
 let Balance = getById("current-balance").innerText;
@@ -264,13 +285,9 @@ bonusBtn.addEventListener("click", function (e) {
     // copied from ChatGPT
     alert("Invalid Coupon!\n\nOur Coupons:\n" + coupons.join("\n"));
   }
-  console.log(bonusAmount);
 
   if (bonusAmount > 0) {
-    console.log(bonusAmount);
-
     currentBalance += bonusAmount;
-    console.log(currentBalance);
 
     getById("current-balance").innerText = currentBalance;
     showHide();
@@ -304,7 +321,6 @@ payBtn.addEventListener("click", function (e) {
     isNaN(Number(billAmount)) ||
     billAmount > currentBalance
   ) {
-    console.log(billAmount);
     alert("Invalid Amount");
   } else if (billPin !== validPin) {
     alert("Wrong Pin");
