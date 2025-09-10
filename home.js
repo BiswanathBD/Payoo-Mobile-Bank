@@ -43,7 +43,7 @@ options.addEventListener("click", function (e) {
   if (card) {
     allCards.forEach((cards) => {
       cards.classList.remove("bg-blue-50");
-      cards.classList.replace("border-blue-100", "border-[#0808081a]");
+      cards.classList.replace("border-blue-200", "border-[#0808081a]");
     });
     card.classList.replace("border-[#0808081a]", "border-blue-200");
     card.classList.add("bg-blue-50");

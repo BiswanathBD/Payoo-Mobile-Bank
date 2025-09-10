@@ -30,10 +30,18 @@
       }
       .option-btn {
         transition: all 0.3s ease;
+        cursor: pointer;
       }
-      .option-btn:hover {
-        background-color: #08080808;
-        font-weight: 500;
+      @media (hover: hover) and (pointer: fine) {
+        .option-btn:hover {
+          background-color: #08080808;
+          font-weight: 500;
+        }
+
+        .option-btn.bg-blue-50:hover {
+          background-color: #eff6ff;
+          font-weight: normal;
+        }
       }
     </style>
   </head>
@@ -90,7 +98,10 @@
     </div>
 
     <!-- option card section -->
-    <div id="options-container" class="px-5 pb-6 grid grid-cols-3 gap-4 bg-white rounded-b-3xl">
+    <div
+      id="options-container"
+      class="px-5 pb-6 grid grid-cols-3 gap-4 bg-white rounded-b-3xl"
+    >
       <div
         id="add-card"
         class="option-btn py-4 border border-[#0808081a] rounded-xl"
