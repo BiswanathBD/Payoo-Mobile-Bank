@@ -21,7 +21,6 @@ getById("log-out").addEventListener("click", function () {
 const validPin = localStorage.getItem("userPin");
 
 const sections = document.getElementsByClassName("dynamic-section");
-
 function hiddenToggle(id) {
   for (let section of sections) {
     section.classList.add("hidden");
@@ -30,7 +29,7 @@ function hiddenToggle(id) {
   const allCards = document.querySelectorAll(".option-btn");
   allCards.forEach((cards) => {
     cards.classList.remove("bg-blue-50");
-    cards.classList.replace("border-blue-100", "border-[#0808081a]");
+    cards.classList.replace("border-blue-200", "border-[#0808081a]");
   });
 }
 
